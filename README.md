@@ -1,6 +1,6 @@
 # SwinFuser: Hierarchical Vision Transformers for Scene Understanding Toward Safe Autonomous Driving
 
-> Submitted to *Neurocomputing* (Elsevier, Q1)
+> Submitted to *Computer Vision and Image Understanding* (Elsevier, Q1)
 
 ---
 
@@ -101,14 +101,10 @@ For **multi-GPU distributed** training:
 
 ```
 cd team_code_transfuser
-CUDA_VISIBLE_DEVICES=0,1 OMP_NUM_THREADS=16 OPENBLAS_NUM_THREADS=1 torchrun --nnodes=1 --nproc_per_node=2 --max_restarts=0 --rdzv_id=1234576890 --rdzv_backend=c10d train.py --logdir /path/to/logdir --root_dir /path/to/dataset_root/ --parallel_training 1
+torchrun --nnodes=1 --nproc_per_node=4 --max_restarts=3 --rdzv_id=$RANDOM --rdzv_backend=c10d --rdzv_endpoint=localhost:29500 --rdzv_conf=timeout=3600 train_swin.py --id swin_ptt --backbone swin_ptt --image_architecture resnet34 --lidar_architecture resnet18 --use_velocity 1 --batch_size 2 --logdir  /path/to/logdir --root_dir /path/to/dataset_root/ --parallel_training 1 --sync_batch_norm 1 --zero_redundancy_optimizer 1 --auto_resume 0 --start_epoch 0 --memory_efficient 1 --gradient_accumulation_steps 8 --save_every 1 --gpu_memory_threshold 0.85 --epochs 41 --schedule 1 --schedule_reduce_epoch_01 30 --schedule_reduce_epoch_02 40 --val_every 5
 ```
 
-For **SwinFuser** training specifically:
 
-```
-torchrun --nnodes=1 --nproc_per_node=4 --max_restarts=3 --rdzv_id=$RANDOM --rdzv_backend=c10d --rdzv_endpoint=localhost:29500 --rdzv_conf=timeout=3600 train_swin.py --id swin_ptt --backbone swin_ptt --image_architecture resnet34 --lidar_architecture resnet18 --use_velocity 1 --batch_size 2 --logdir /home/group17/transfuser/logs --root_dir /home/group17/transfuser/data --parallel_training 1 --sync_batch_norm 1 --zero_redundancy_optimizer 1 --auto_resume 0 --start_epoch 0 --memory_efficient 1 --gradient_accumulation_steps 8 --save_every 1 --gpu_memory_threshold 0.85 --epochs 41 --schedule 1 --schedule_reduce_epoch_01 30 --schedule_reduce_epoch_02 45 --val_every 5
-```
 
 ---
 
@@ -116,7 +112,7 @@ torchrun --nnodes=1 --nproc_per_node=4 --max_restarts=3 --rdzv_id=$RANDOM --rdzv
 
 The evaluation script is located at `leaderboard/scripts/local_evaluation.sh`.
 
-> ⚠️ **Before running, open the script and update these 3 variables to match your setup:**
+>  **Before running, open the script and update these 3 variables to match your setup:**
 > - `TEAM_CONFIG` → path to your model checkpoint config folder
 >   ```
 >   export TEAM_CONFIG=/your/path/to/model_ckpt/folder
@@ -191,11 +187,11 @@ SwinFuser/
 If you find this work useful, please cite:
 
 ```bibtex
-@article{swinfuser2024,
-  title={SwinFuser: Bidirectional Cross-Modal Attention for Camera-LiDAR Fusion in Autonomous Driving},
-  author={Your Name},
-  journal={Neurocomputing},
-  year={2024}
+@article{swinfuser2026,
+  title={SwinFuser: Hierarchical Vision Transformers for Scene Understanding Toward Safe Autonomous Driving},
+  author={Amany Sherif and Hamdy S. Heniedy and Mohammed Alrahmawy and Sara El-Metwally},
+  journal={ Computer Vision and Image Understanding},
+  year={2026}
 }
 ```
 
