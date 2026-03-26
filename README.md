@@ -2,7 +2,7 @@
 
 **Camera-LiDAR Fusion for Autonomous Driving via Bidirectional Cross-Modal Attention and Swin Transformer Backbones**
 
-> Submitted to *Neurocomputing* (Elsevier, Q1)
+> Submitted to * Computer Vision and Image Understanding* (Elsevier, Q1)
 
 ---
 
