@@ -1,6 +1,6 @@
 # SwinFuser: Hierarchical Vision Transformers for Scene Understanding Toward Safe Autonomous Driving
 
-> Submitted to *Computer Vision and Image Understanding* (Elsevier, Q1)
+
 
 ---
 
