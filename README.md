@@ -1,4 +1,4 @@
-# SwinFuser: Hierarchical Vision Transformers for Scene Understanding Toward Safe Autonomous Driving
+# SwinFuser: Multi-Modal Implicit Imitation Learning for Safe Autonomous Vehicles
 
 
 
