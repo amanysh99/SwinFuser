@@ -95,14 +95,14 @@ The dataset is structured as follows:
 For **single GPU** training:
 
 ```
-cd team_code_transfuser
+cd swinFuser_code_files
 python train.py --batch_size 10 --logdir /path/to/logdir --root_dir /path/to/dataset_root/ --parallel_training 0
 ```
 
 For **multi-GPU distributed** training:
 
 ```
-cd team_code_transfuser
+cd swinFuser_code_files
 torchrun --nnodes=1 --nproc_per_node=4 --max_restarts=3 --rdzv_id=$RANDOM --rdzv_backend=c10d --rdzv_endpoint=localhost:29500 --rdzv_conf=timeout=3600 train_swin.py --id swin_ptt --backbone swin_ptt --image_architecture resnet34 --lidar_architecture resnet18 --use_velocity 1 --batch_size 2 --logdir  /path/to/logdir --root_dir /path/to/dataset_root/ --parallel_training 1 --sync_batch_norm 1 --zero_redundancy_optimizer 1 --auto_resume 0 --start_epoch 0 --memory_efficient 1 --gradient_accumulation_steps 8 --save_every 1 --gpu_memory_threshold 0.85 --epochs 41 --schedule 1 --schedule_reduce_epoch_01 30 --schedule_reduce_epoch_02 40 --val_every 5
 ```
 
