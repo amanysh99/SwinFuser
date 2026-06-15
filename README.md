@@ -30,6 +30,7 @@ The key contribution is a **bidirectional cross-modal attention fusion** mechani
 - **Training:** Imitation learning on CARLA expert demonstrations
 
 ---
+<!--
 
 ## Results on CARLA Longest6
 
@@ -46,7 +47,7 @@ Comparison of SwinFuser with state-of-the-art methods on the Longest6 Benchmark.
 | **SwinFuser (Ours)** | **55.60** | 87.21 | **0.67** | **0.02** | 1.01 | 0.10 | **0.10** | 0.05 | **0.00** | 0.13 | 0.17 |
 
 > **DS**: Driving Score, **RC**: Route Completion, **IS**: Infraction Score, **Ped**: Collisions with pedestrians, **Veh**: Collisions with vehicles, **Stat**: Collisions with static layout, **Red**: Red light violation, **OR**: Off-road driving, **Dev**: Route deviation, **TO**: Timeout, **Block**: Vehicle Blocked. For DS/RC/IS higher is better (↑). For infractions lower is better (↓). **Bold** = best result. SwinFuser achieves the best DS and IS overall.
-
+-->
 ---
 
 ## Setup
