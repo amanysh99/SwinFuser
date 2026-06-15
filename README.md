@@ -1,5 +1,4 @@
 # SwinFuser: Multi-Modal Implicit Imitation Learning for Safe Autonomous Vehicles
-![Autonomous Vehicle Safety](images/WorkDefinition.png)
 
 
 
